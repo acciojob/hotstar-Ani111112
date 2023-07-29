@@ -16,20 +16,10 @@ public class ProductionHouseService {
     ProductionHouseRepository productionHouseRepository;
 
     public Integer addProductionHouseToDb(ProductionHouseEntryDto productionHouseEntryDto){
-        ProductionHouse productionHouse1 = productionHouseRepository.findByName(productionHouseEntryDto.getName());
-
-        if (productionHouse1 == null) {
-            //make dto -> entity
-            ProductionHouse productionHouse = new ProductionHouse();
-            productionHouse.setName(productionHouseEntryDto.getName());
-            productionHouse.setRatings(0.0);
-            productionHouse.setWebSeriesList(new ArrayList<>());
-            ProductionHouse savedProduction = productionHouseRepository.save(productionHouse);
-            return savedProduction.getId();
-        }
-        return null;
+        ProductionHouse productionHouse = new ProductionHouse();
+        productionHouse.setName(productionHouseEntryDto.getName());
+        productionHouse.setRatings(0);
+        ProductionHouse save = productionHouseRepository.save(productionHouse);
+        return  save.getId();
     }
-
-
-
 }

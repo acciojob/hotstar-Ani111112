@@ -7,8 +7,7 @@ public class ProductionHouseEntryDto {
 
     private String name;
 
-    @JsonCreator
-    public ProductionHouseEntryDto(@JsonProperty("name") String name) {
+    public ProductionHouseEntryDto(String name) {
         this.name = name;
     }
     public String getName() {
