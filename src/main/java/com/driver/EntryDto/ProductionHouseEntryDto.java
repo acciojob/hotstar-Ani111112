@@ -7,10 +7,10 @@ public class ProductionHouseEntryDto {
 
     private String name;
 
-    public ProductionHouseEntryDto(String name) {
+    @JsonCreator
+    public ProductionHouseEntryDto(@JsonProperty("name") String name) {
         this.name = name;
     }
-
     public String getName() {
         return name;
     }
