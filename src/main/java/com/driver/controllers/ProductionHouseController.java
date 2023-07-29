@@ -20,8 +20,10 @@ public class ProductionHouseController {
     @PostMapping("/add")
     public Integer addProductionHouseInfoIntoDb(@RequestBody ProductionHouseEntryDto productionHouseEntryDto){
         //Default ratings of the ProductionHouse should be 0
-        System.out.println(productionHouseEntryDto.getName());
-        return productionHouseService.addProductionHouseToDb(productionHouseEntryDto);
+//        System.out.println(productionHouseEntryDto.getName());
+          Integer res = productionHouseService.addProductionHouseToDb(productionHouseEntryDto);
+          if(res != null)return res;
+          else return -1;
     }
 
 }
