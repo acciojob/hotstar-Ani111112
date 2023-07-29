@@ -51,7 +51,7 @@ public class SubscriptionService {
             return savedSubscription.getTotalAmountPaid();
         }
 
-        return null;
+        return 0;
     }
 
     public Integer upgradeSubscription(Integer userId)throws Exception{
@@ -82,7 +82,7 @@ public class SubscriptionService {
             userRepository.save(user);
             return cost - oldPrice;
         }
-        return null;
+        return 0;
     }
 
     public Integer calculateTotalRevenueOfHotstar(){
